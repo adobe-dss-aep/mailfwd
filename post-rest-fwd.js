@@ -12,8 +12,9 @@ const axios = require('axios');
 const axiosRetry = require('axios-retry').default;
 
 // --- Configuration ---
-const REST_URL = 'https://example.com/api/incoming-email';
-const API_TOKEN = process.env.API_TOKEN || 'your-secret-token-here';
+const REST_URL =
+  process.env.REST_URL ||
+  'https://a882aa3e9a7de54daae18ac475ac53.1e.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/4aa371acf6304ffe85be8372e6350c52/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=rqtQpVlltyr-HjRg5nQx3oFavM2V1ShGoTryRj6zA3s';
 const TIMEOUT_MS = 30000;
 const LOG_FILE = '/var/log/postfix_to_rest.log';
 
@@ -94,10 +95,7 @@ async function main() {
 
     try {
       const response = await client.post(REST_URL, payload, {
-        headers: {
-          Authorization: `Bearer ${API_TOKEN}`,
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
       });
       log('INFO', `Delivered OK (${response.status})`);
       return EX_OK;
