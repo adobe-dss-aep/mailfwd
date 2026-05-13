@@ -2,6 +2,11 @@
 /**
  * postfix_to_rest.js - Forward incoming emails from Postfix to a REST API.
  * Reads a raw RFC822 email from stdin and POSTs it to the configured URL.
+ *
+ * Postfix: use the same unprivileged user as in main.cf/master.cf for the pipe.
+ * That user needs search (execute) bit on each directory down to this file, plus
+ * read on node_modules. For ./post-rest-fwd.js, the file must be executable (chmod +x).
+ * On the server, run scripts/postfix-perms.sh as root after npm ci.
  */
 
 'use strict';
