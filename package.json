@@ -1,0 +1,25 @@
+{
+  "name": "mailfwd",
+  "version": "1.0.0",
+  "description": "Forward incoming Postfix mail to a REST API (reads RFC822 from stdin)",
+  "main": "post-rest-fwd.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node post-rest-fwd.js",
+    "post-rest-fwd": "node post-rest-fwd.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "postfix",
+    "email",
+    "rest"
+  ],
+  "license": "UNLICENSED",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "axios-retry": "^4.5.0",
+    "mailparser": "^3.7.1"
+  }
+}
