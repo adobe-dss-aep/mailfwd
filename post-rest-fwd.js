@@ -19,7 +19,7 @@ const axiosRetry = require('axios-retry').default;
 // --- Configuration ---
 const REST_URL =
   process.env.REST_URL ||
-  'https://a882aa3e9a7de54daae18ac475ac53.1e.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/4aa371acf6304ffe85be8372e6350c52/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=rqtQpVlltyr-HjRg5nQx3oFavM2V1ShGoTryRj6zA3s';
+  'https://mobilesmsapp-f5d5cmaebad4cjhb.eastus2-01.azurewebsites.net/api/inbound/mail';
 const TIMEOUT_MS = 30000;
 const LOG_FILE = '/var/log/postfix_to_rest.log';
 
